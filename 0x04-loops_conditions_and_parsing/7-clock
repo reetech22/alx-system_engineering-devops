@@ -9,13 +9,13 @@ do
 	if [ $hour -eq 0 ];then
 		minute=1
 	else
-		minute=0
+		minute=1
 	fi
 
 	while [ $minute -le 59 ]
 	do
 		echo "$minute"
 		((minute++))
-done
+	done
 	((hour++))
 done
