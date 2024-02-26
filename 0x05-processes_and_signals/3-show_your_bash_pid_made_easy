@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 # Iterate over all directories in /proc that are numeric (representing PIDs)
 for pid in /proc/[0-9]*/; do
     pid=${pid%*/}  # Remove trailing slash
@@ -16,4 +15,3 @@ for pid in /proc/[0-9]*/; do
         fi
     fi
 done
-
