@@ -1,17 +1,4 @@
 #!/usr/bin/env bash
-# Iterate over all directories in /proc that are numeric (representing PIDs)
-for pid in /proc/[0-9]*/; do
-    pid=${pid%*/}  # Remove trailing slash
-    pid=${pid##*/} # Extract PID from path
-    
-    # Check if cmdline file exists for the process
-    if [ -f "/proc/$pid/cmdline" ]; then
-        # Read the process name from cmdline file
-        process_name=$(tr '\0' ' ' < "/proc/$pid/cmdline" | cut -d ' ' -f 1)
-        
-        # Check if process name contains "bash"
-        if [[ $process_name == *"bash"* ]]; then
-            echo "PID: $pid, Process Name: $process_name"
-        fi
-    fi
-done
+#displays with bash
+
+pgrep bash -l
